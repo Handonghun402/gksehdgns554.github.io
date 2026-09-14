@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+:root {
+  --ink: #18332b;
+  --muted: #6b8177;
+  --paper: #edf3ee;
+  --line: #c8d8ce;
+  --accent: #477b67;
+  --soft-accent: #d5e5d9;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: auto;
+  padding: 28px 34px;
+}
+.brand {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.brand span, .dot { color: var(--accent); }
+nav { display: flex; gap: 28px; color: var(--muted); font-size: .78rem; }
+nav a:hover, .text-link:hover, .email:hover, .github:hover { color: var(--accent); }
+.hero, .details, .study-section, .contact-section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 105px 34px;
+}
+.hero { min-height: 76vh; padding-top: 130px; }
+.eyebrow, .small-title, .section-label, .scroll-note, footer, .role {
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.eyebrow { color: var(--muted); }
+.eyebrow span { color: var(--accent); margin: 0 8px; }
+.hero-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; margin-top: 82px; }
+.greeting { margin: 0 0 6px; color: var(--muted); font-size: 1.05rem; }
+h1, h2, p { margin-top: 0; }
+h1 {
+  margin-bottom: 0;
+  font-family: Georgia, "Malgun Gothic", serif;
+  font-size: clamp(4rem, 11vw, 9.5rem);
+  font-weight: 400;
+  letter-spacing: -.08em;
+  line-height: .95;
+}
+.hero-copy { padding-top: 18px; border-top: 1px solid var(--ink); }
+.role { color: var(--muted); line-height: 1.9; }
+.intro { margin: 42px 0 30px; font-size: 1.08rem; font-weight: 600; }
+.text-link, .email, .github { display: inline-block; font-size: .86rem; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 7px; }
+.text-link span, .email span, .github span { color: var(--accent); margin-left: 16px; }
+.scroll-note { display: flex; align-items: center; gap: 12px; margin-top: 100px; color: var(--muted); }
+.scroll-note span { display: inline-block; width: 38px; height: 1px; background: var(--accent); }
+.section-label { display: flex; gap: 20px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 17px; }
+.section-label span:first-child { color: var(--accent); }
+.details-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-top: 80px; }
+.small-title { color: var(--accent); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.2; letter-spacing: -.06em; }
+h2 em { color: var(--accent); font-style: normal; }
+.interest-list { border-top: 1px solid var(--ink); }
+.interest-item { display: grid; grid-template-columns: 45px 1fr 20px; align-items: center; min-height: 80px; border-bottom: 1px solid var(--line); }
+.interest-item span { color: var(--muted); font-size: .75rem; }
+.interest-item strong { font-size: 1.2rem; font-weight: 600; }
+.interest-item b { color: var(--accent); font-size: 1.2rem; font-weight: 400; }
+.study-section { padding-top: 30px; }
+.study-card { position: relative; margin: 80px 0 0 auto; max-width: 570px; padding: 42px 45px; background: var(--soft-accent); }
+.study-title { margin-bottom: 15px; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 700; letter-spacing: -.06em; }
+.study-caption { max-width: 330px; color: #6e5142; font-size: .9rem; }
+.card-mark { position: absolute; top: 30px; right: 35px; color: var(--accent); font-size: 2rem; }
+.contact-section { padding-top: 110px; padding-bottom: 130px; }
+.contact-content { padding-top: 80px; }
+.email { margin: 15px 20px 10px 0; font-size: 1.2rem; }
+.github { margin-top: 15px; color: var(--accent); }
+.placeholder { margin-top: 45px; color: var(--muted); font-size: .8rem; }
+footer { display: flex; justify-content: space-between; max-width: 1180px; margin: auto; padding: 25px 34px 35px; color: var(--muted); border-top: 1px solid var(--line); }
+
+@media (max-width: 680px) {
+  .site-header, .hero, .details, .study-section, .contact-section { padding-left: 22px; padding-right: 22px; }
+  .site-header { padding-top: 22px; padding-bottom: 22px; }
+  nav { gap: 13px; font-size: .68rem; }
+  .hero { min-height: auto; padding-top: 80px; padding-bottom: 100px; }
+  .hero-grid, .details-content { grid-template-columns: 1fr; gap: 45px; margin-top: 55px; }
+  h1 { font-size: clamp(4rem, 19vw, 7rem); }
+  .hero-copy { padding-top: 22px; }
+  .intro { margin-top: 30px; }
+  .scroll-note { margin-top: 75px; }
+  .details, .contact-section { padding-top: 75px; padding-bottom: 90px; }
+  .details-content, .contact-content { padding-top: 52px; }
+  .study-section { padding-top: 0; padding-bottom: 75px; }
+  .study-card { margin-top: 52px; padding: 35px 28px; }
+  .email { font-size: .98rem; word-break: break-all; }
+  footer { padding-left: 22px; padding-right: 22px; font-size: .61rem; }
+}
