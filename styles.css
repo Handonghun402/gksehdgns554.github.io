@@ -111,3 +111,5 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
   .email { font-size: .98rem; word-break: break-all; }
   footer { padding-left: 22px; padding-right: 22px; font-size: .61rem; }
 }
+
+.section-heading h2 { word-break: keep-all; }
