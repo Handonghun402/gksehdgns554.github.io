@@ -74,10 +74,14 @@ h1 {
 h2 { font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.2; letter-spacing: -.06em; }
 h2 em { color: var(--accent); font-style: normal; }
 .interest-list { border-top: 1px solid var(--ink); }
-.interest-item { display: grid; grid-template-columns: 45px 1fr 20px; align-items: center; min-height: 80px; border-bottom: 1px solid var(--line); }
-.interest-item span { color: var(--muted); font-size: .75rem; }
-.interest-item strong { font-size: 1.2rem; font-weight: 600; }
-.interest-item b { color: var(--accent); font-size: 1.2rem; font-weight: 400; }
+.interest-intro { max-width: 440px; margin-top: 28px; font-size: 1rem; line-height: 1.85; color: #465f53; word-break: keep-all; }
+.interest-item { display: grid; grid-template-columns: 35px minmax(0, 1fr); gap: 10px; align-items: start; padding: 27px 0; border-bottom: 1px solid var(--line); word-break: keep-all; }
+.interest-number { color: var(--muted); font-size: .875rem; padding-top: 4px; }
+.interest-item h3 { margin: 0 0 14px; font-size: 1.2rem; font-weight: 600; }
+.interest-item p { margin-bottom: 14px; font-size: 1rem; line-height: 1.85; color: #465f53; }
+.interest-item .interest-question { margin: 0; padding-left: 14px; border-left: 2px solid var(--accent); font-size: .9rem; font-weight: 600; color: var(--ink); }
+.social-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 14px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .study-section { padding-top: 30px; }
 .study-card { position: relative; margin: 80px 0 0 auto; max-width: 570px; padding: 42px 45px; background: var(--soft-accent); }
 .study-title { margin-bottom: 15px; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 700; letter-spacing: -.06em; }
