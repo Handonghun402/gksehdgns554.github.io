@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="한동훈의 개인 소개 페이지">
   <title>한동훈 | 개인 소개</title>
-  <link rel="stylesheet" href="styles.css?v=20260922-hero">
+  <link rel="stylesheet" href="styles.css?v=20260922-interactive">
 </head>
 <body>
   <header class="site-header">
@@ -30,16 +30,17 @@
           </div>
         </div>
         <div class="hero-fields" aria-label="관심 분야: 구조해석, 공력해석, 산업 AI">
+          <p class="icon-hint">아이콘을 클릭하거나 터치해 보세요.</p>
           <div class="field-tile">
-            <svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path d="M40 7 66 17v23c0 15-12 25-26 33C26 65 14 55 14 40V17Z"/><path class="icon-detail" d="M14 29h52M16 43h48M24 57h32M27 13v47M40 8v64M53 13v47M15 18l48 40M65 18 17 58"/></svg>
+            <button type="button" class="icon-button" data-animation="structure" aria-label="구조해석: 하중 반응 애니메이션 재생" title="구조해석: 하중 반응 애니메이션 재생"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path d="M40 7 66 17v23c0 15-12 25-26 33C26 65 14 55 14 40V17Z"/><path class="icon-detail" d="M14 29h52M16 43h48M24 57h32M27 13v47M40 8v64M53 13v47M15 18l48 40M65 18 17 58"/></svg></button>
             <div><span>STRUCTURAL ANALYSIS</span><h2>구조해석</h2><p>더 안전한 자동차</p></div>
           </div>
           <div class="field-tile">
-            <svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path d="M7 20h40c15 0 15-14 5-14M7 34h51c20 0 20-16 9-16M7 48h40c18 0 18 20 5 20M7 62h23"/><path class="icon-detail" d="m26 15 5 5-5 5m0 18 5 5-5 5"/></svg>
+            <button type="button" class="icon-button" data-animation="airflow" aria-label="공력해석: 공기 흐름 애니메이션 재생" title="공력해석: 공기 흐름 애니메이션 재생"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path d="M7 20h40c15 0 15-14 5-14M7 34h51c20 0 20-16 9-16M7 48h40c18 0 18 20 5 20M7 62h23"/><path class="icon-detail" d="m26 15 5 5-5 5m0 18 5 5-5 5"/></svg></button>
             <div><span>AERODYNAMICS</span><h2>공력해석</h2><p>더 효율적인 움직임</p></div>
           </div>
           <div class="field-tile">
-            <svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><rect x="19" y="19" width="42" height="42" rx="7"/><path d="M29 8v11m11-11v11M51 8v11M29 61v11m11-11v11m11-11v11M8 29h11M8 40h11M8 51h11M61 29h11M61 40h11M61 51h11"/><circle cx="31" cy="32" r="3"/><circle cx="49" cy="33" r="3"/><circle cx="40" cy="49" r="3"/><path class="icon-detail" d="m34 32 12 1m-13 2 6 11m8-10-6 10"/></svg>
+            <button type="button" class="icon-button" data-animation="ai" aria-label="산업 AI: 신호 전달 애니메이션 재생" title="산업 AI: 신호 전달 애니메이션 재생"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><rect x="19" y="19" width="42" height="42" rx="7"/><path d="M29 8v11m11-11v11M51 8v11M29 61v11m11-11v11m11-11v11M8 29h11M8 40h11M8 51h11M61 29h11M61 40h11M61 51h11"/><circle cx="31" cy="32" r="3"/><circle cx="49" cy="33" r="3"/><circle cx="40" cy="49" r="3"/><path class="icon-detail" d="m34 32 12 1m-13 2 6 11m8-10-6 10"/></svg></button>
             <div><span>INDUSTRIAL AI</span><h2>산업 AI</h2><p>현실에 쓰이는 지능</p></div>
           </div>
         </div>
@@ -82,5 +83,19 @@
     <span>© 2026 한동훈</span>
     <span>MADE FOR THE NEXT TURN</span>
   </footer>
+<script>
+  document.querySelectorAll('.icon-button').forEach((button) => {
+    let resetTimer;
+    button.addEventListener('click', () => {
+      clearTimeout(resetTimer);
+      button.classList.remove('is-playing');
+      // Restart on every activation, including quick repeated taps.
+      void button.offsetWidth;
+      button.classList.add('is-playing');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      resetTimer = setTimeout(() => button.classList.remove('is-playing'), reducedMotion ? 650 : 1900);
+    });
+  });
+</script>
 </body>
 </html>
