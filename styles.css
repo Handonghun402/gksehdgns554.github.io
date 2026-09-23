@@ -159,3 +159,9 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 @keyframes chip-process { 0%,100% { stroke-width: 1.8; } 40% { stroke-width: 3; stroke: #245743; } }
 @media (max-width: 800px) { .icon-button { flex-basis: 72px; width: 72px; height: 72px; } .icon-button svg { width: 60px; height: 60px; } }
 @media (prefers-reduced-motion: reduce) { .icon-button { transition: none; } .icon-button.is-playing svg, .icon-button.is-playing svg * { animation: none !important; } }
+
+/* Keep the telephone number and arrow together; give mobile its own row. */
+.phone { display: inline-flex; align-items: center; gap: .5em; white-space: nowrap; }
+@media (max-width: 680px) {
+  .phone { display: flex; width: fit-content; margin-top: 8px; }
+}
