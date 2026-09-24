@@ -1,18 +1,110 @@
-/* 사진을 추가할 때 아래 목록에 파일 경로와 설명을 적으세요.
-   사진 파일은 index.html과 같은 위치의 photos 폴더에 올립니다.
-   예: { src: "photos/maintenance-01.jpg", caption: "내 차를 정비하며 남긴 기록" }
-   항목 사이에는 쉼표(,)를 넣으세요. 첫 사진이 카드의 대표 사진이 됩니다. */
 window.HOBBY_PHOTOS = {
-  maintenance: [
-    // { src: "photos/maintenance-01.jpg", caption: "내 차를 정비하며 남긴 기록" },
+  "maintenance": [
+    {
+      "caption": "",
+      "src": "photos/maintenance-01.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-02.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-03.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-04.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-05.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-07.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-08.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-09.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-10.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/maintenance-11.jpg"
+    }
   ],
-  hiking: [
-    // { src: "photos/hiking-01.jpg", caption: "산을 걸으며" },
+  "hiking": [
+    {
+      "caption": "",
+      "src": "photos/hiking-01.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-02.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-03.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-04.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-05.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-06.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-07.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/hiking-08.jpg"
+    }
   ],
-  fishing: [
-    // { src: "photos/fishing-01.jpg", caption: "낚시 기록" },
+  "fishing": [
+    {
+      "caption": "",
+      "src": "photos/fishing-01.png"
+    }
   ],
-  travel: [
-    // { src: "photos/travel-01.jpg", caption: "여행 기록" },
-  ],
+  "travel": [
+    {
+      "caption": "",
+      "src": "photos/travel-01.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/travel-02.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/travel-03.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/travel-04.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/travel-05.jpg"
+    },
+    {
+      "caption": "",
+      "src": "photos/travel-06.jpg"
+    }
+  ]
 };
