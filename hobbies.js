@@ -49,20 +49,40 @@
   document.querySelectorAll('[data-hobby]').forEach(button => {
     const key = button.dataset.hobby;
     const entries = photoList(key);
+    let coverIndex = 0;
     if (entries.length) {
       const cover = document.createElement('img');
       cover.src = entries[0].src;
       cover.alt = '';
       cover.loading = 'lazy';
       cover.className = 'hobby-cover';
-      cover.onerror = () => cover.remove();
+      cover.onerror = () => { cover.style.visibility = 'hidden'; };
+      cover.onload = () => { cover.style.visibility = ''; };
+      if (entries.length > 1) {
+        let nextIndex = 1;
+        let upcoming;
+        const preload = () => {
+          upcoming = new Image();
+          upcoming.src = entries[nextIndex].src;
+        };
+        preload();
+        setInterval(() => {
+          if (document.hidden || dialog.open || !upcoming.complete) return;
+          if (upcoming.naturalWidth > 0) {
+            cover.src = entries[nextIndex].src;
+            coverIndex = nextIndex;
+          }
+          nextIndex = (nextIndex + 1) % entries.length;
+          preload();
+        }, 3000);
+      }
       button.querySelector('.hobby-visual').append(cover);
       button.querySelector('.hobby-photo-label').textContent = `사진 ${entries.length}장 보기`;
     }
     button.addEventListener('click', () => {
       opener = button;
       photos = photoList(key);
-      index = 0;
+      index = coverIndex;
       title.textContent = titles[key];
       dialog.showModal();
       document.body.classList.add('gallery-open');
