@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 :root {
-  --ink: #18332b;
-  --muted: #6b8177;
-  --paper: #edf3ee;
-  --line: #c8d8ce;
-  --accent: #477b67;
-  --soft-accent: #d5e5d9;
+  --ink: #262a2f;
+  --muted: #747b83;
+  --paper: #f1f2f3;
+  --line: #d0d4d8;
+  --accent: #555f6b;
+  --soft-accent: #e0e4e8;
 }
 
 * { box-sizing: border-box; }
@@ -73,11 +73,11 @@ h1 {
 h2 { font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.2; letter-spacing: -.06em; }
 h2 em { color: var(--accent); font-style: normal; }
 .interest-list { border-top: 1px solid var(--ink); }
-.interest-intro { max-width: 440px; margin-top: 28px; font-size: 1rem; line-height: 1.85; color: #465f53; word-break: keep-all; }
+.interest-intro { max-width: 440px; margin-top: 28px; font-size: 1rem; line-height: 1.85; color: #626b75; word-break: keep-all; }
 .interest-item { display: grid; grid-template-columns: 35px minmax(0, 1fr); gap: 10px; align-items: start; padding: 27px 0; border-bottom: 1px solid var(--line); word-break: keep-all; }
 .interest-number { color: var(--muted); font-size: .875rem; padding-top: 4px; }
 .interest-item h3 { margin: 0 0 14px; font-size: 1.2rem; font-weight: 600; }
-.interest-item p { margin-bottom: 14px; font-size: 1rem; line-height: 1.85; color: #465f53; }
+.interest-item p { margin-bottom: 14px; font-size: 1rem; line-height: 1.85; color: #626b75; }
 .interest-item .interest-question { margin: 0; padding-left: 14px; border-left: 2px solid var(--accent); font-size: .9rem; font-weight: 600; color: var(--ink); }
 .social-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 14px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
@@ -118,7 +118,7 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 .field-tile .icon-detail { stroke-width: 1; opacity: .6; }
 .field-tile span { font-size: .7rem; letter-spacing: .12em; color: var(--muted); }
 .field-tile h2 { font-size: 1.3rem; letter-spacing: -.03em; margin: 5px 0; font-weight: 600; }
-.field-tile p { font-size: .875rem; color: #465f53; margin: 0; }
+.field-tile p { font-size: .875rem; color: #626b75; margin: 0; }
 .scroll-note { margin-top: 60px; }
 @media (max-width: 800px) {
   .hero-grid { gap: 35px; }
@@ -135,12 +135,12 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Short, user-triggered icon animations. */
-.icon-hint { margin: 15px 0 0; color: #465f53; font-size: .8rem; }
+.icon-hint { margin: 15px 0 0; color: #626b75; font-size: .8rem; }
 .icon-button { display: grid; place-items: center; flex: 0 0 88px; width: 88px; height: 88px; padding: 6px; border: 1px solid transparent; border-radius: 18px; background: transparent; color: var(--accent); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background-color .18s, border-color .18s; }
 .icon-button svg { display: block; width: 76px; height: 76px; overflow: visible; }
 .icon-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.icon-button.is-playing { background: var(--soft-accent); border-color: #abc8b8; }
-@media (hover: hover) { .icon-button:hover { background: var(--soft-accent); border-color: #abc8b8; } }
+.icon-button.is-playing { background: var(--soft-accent); border-color: #acb4be; }
+@media (hover: hover) { .icon-button:hover { background: var(--soft-accent); border-color: #acb4be; } }
 .icon-button[data-animation="structure"].is-playing svg { transform-origin: center; animation: load-response 1.8s ease-in-out; }
 .icon-button[data-animation="structure"].is-playing .icon-detail { animation: stress-map 1.8s ease-in-out; }
 .icon-button[data-animation="airflow"].is-playing svg > path:first-child { stroke-dasharray: 18 7; animation: air-stream .6s linear 3; }
@@ -151,12 +151,12 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 .icon-button[data-animation="ai"].is-playing circle:nth-of-type(3) { animation-delay: .5s; }
 .icon-button[data-animation="ai"].is-playing rect { animation: chip-process 1.8s ease-in-out; }
 @keyframes load-response { 0%,100% { transform: scale(1); } 28% { transform: scale(.88,1.06); } 52% { transform: scale(1.035,.98); } 72% { transform: scale(.98,1.01); } }
-@keyframes stress-map { 0%,100% { stroke: var(--accent); opacity: .6; } 30%,50% { stroke: #ad702b; opacity: 1; stroke-width: 1.7; } }
+@keyframes stress-map { 0%,100% { stroke: var(--accent); opacity: .6; } 30%,50% { stroke: #7c8fa6; opacity: 1; stroke-width: 1.7; } }
 @keyframes air-stream { to { stroke-dashoffset: -50; } }
 @keyframes air-arrows { 0%,100% { transform: translateX(0); opacity: .6; } 55% { transform: translateX(18px); opacity: 1; } }
 @keyframes signal-flow { to { stroke-dashoffset: -27; } }
-@keyframes node-signal { 0%,100% { fill: transparent; stroke-width: 1.8; } 30%,60% { fill: #6caa8b; stroke-width: 3; } }
-@keyframes chip-process { 0%,100% { stroke-width: 1.8; } 40% { stroke-width: 3; stroke: #245743; } }
+@keyframes node-signal { 0%,100% { fill: transparent; stroke-width: 1.8; } 30%,60% { fill: #8c99a8; stroke-width: 3; } }
+@keyframes chip-process { 0%,100% { stroke-width: 1.8; } 40% { stroke-width: 3; stroke: #404c5c; } }
 @media (max-width: 800px) { .icon-button { flex-basis: 72px; width: 72px; height: 72px; } .icon-button svg { width: 60px; height: 60px; } }
 @media (prefers-reduced-motion: reduce) { .icon-button { transition: none; } .icon-button.is-playing svg, .icon-button.is-playing svg * { animation: none !important; } }
 
@@ -170,13 +170,13 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 .hobbies-section { max-width: 1180px; margin: auto; padding: 20px 34px 35px; }
 .hobbies-heading { padding-top: 70px; }
 .hobbies-heading h2 { word-break: keep-all; }
-.hobbies-heading > p:last-child { color: #465f53; font-size: 1rem; line-height: 1.85; word-break: keep-all; }
+.hobbies-heading > p:last-child { color: #626b75; font-size: 1rem; line-height: 1.85; word-break: keep-all; }
 .hobby-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 45px 38px; margin-top: 38px; }
 .hobby-card { min-width: 0; }
-.hobby-photo { display: block; position: relative; width: 100%; padding: 0; border: 1px solid var(--line); background: #e0eae3; color: var(--ink); text-align: left; cursor: pointer; font: inherit; touch-action: manipulation; }
+.hobby-photo { display: block; position: relative; width: 100%; padding: 0; border: 1px solid var(--line); background: #e4e7eb; color: var(--ink); text-align: left; cursor: pointer; font: inherit; touch-action: manipulation; }
 .hobby-visual { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; aspect-ratio: 16 / 9; position: relative; overflow: hidden; }
 .hobby-visual svg { width: 65px; height: 65px; fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.hobby-visual > span { font-size: .75rem; letter-spacing: .15em; color: #465f53; }
+.hobby-visual > span { font-size: .75rem; letter-spacing: .15em; color: #626b75; }
 .hobby-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hobby-photo-label { display: block; padding: 13px 18px; border-top: 1px solid var(--line); font-size: .875rem; font-weight: 600; }
 .photo-open { position: absolute; bottom: 13px; right: 18px; }
@@ -184,15 +184,15 @@ footer { display: flex; justify-content: space-between; max-width: 1180px; margi
 .hobby-photo:focus-visible, .hobby-gallery button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .hobby-copy { padding: 23px 0 0; }
 .hobby-copy h3 { font-size: 1.4rem; margin: 0 0 12px; }
-.hobby-copy > p:last-child { margin-bottom: 0; font-size: 1rem; color: #465f53; line-height: 1.85; word-break: keep-all; }
+.hobby-copy > p:last-child { margin-bottom: 0; font-size: 1rem; color: #626b75; line-height: 1.85; word-break: keep-all; }
 .hobby-tag { margin: 0 0 8px; font-size: .875rem; font-weight: 600; color: var(--accent); }
 .hobby-gallery { width: min(900px,calc(100vw - 32px)); max-height: 90vh; max-height: 90dvh; padding: 25px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: var(--paper); box-sizing: border-box; overflow: auto; }
-.hobby-gallery::backdrop { background: rgb(15 30 23 / .78); }
+.hobby-gallery::backdrop { background: rgb(25 29 34 / .78); }
 .gallery-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .gallery-header h2 { font-size: 1.4rem; line-height: 1.5; margin: 0; letter-spacing: -.03em; }
 .hobby-gallery button { min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; touch-action: manipulation; white-space: nowrap; }
 .hobby-gallery button:hover { background: var(--soft-accent); }
-.gallery-stage { display: grid; place-items: center; min-height: 230px; background: #e0eae3; border-radius: 6px; }
+.gallery-stage { display: grid; place-items: center; min-height: 230px; background: #e4e7eb; border-radius: 6px; }
 .gallery-image { display: block; width: 100%; max-height: 60vh; max-height: 60dvh; object-fit: contain; }
 .gallery-message { max-width: 380px; margin: 0; padding: 28px; text-align: center; word-break: keep-all; line-height: 1.8; }
 .gallery-caption { font-size: 1rem; margin: 15px 0; white-space: pre-line; overflow-wrap: anywhere; }
@@ -209,3 +209,25 @@ body.gallery-open { overflow: hidden; }
   .gallery-header h2 { font-size: 1.2rem; }
   .gallery-controls { gap: 15px; }
 }
+
+.preview-banner{padding:9px 20px;text-align:center;font-size:11px;background:#292d33;color:#e5e8ec;letter-spacing:.02em}
+.hobby-grid{display:block;margin-top:45px}
+.hobby-card{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:35px;padding:27px 0;border-bottom:1px solid var(--line);align-items:center}
+.hobby-card>.hobby-photo{grid-column:2;grid-row:1}
+.hobby-card>.hobby-copy{grid-column:1;grid-row:1;padding:0}
+.hobby-copy h3{margin:0 0 10px}
+.hobby-copy>p:last-child{margin:0;max-width:620px;font-size:.94rem}
+.hobby-card .hobby-visual{aspect-ratio:3/2}
+.hobby-photo-label{padding:8px 12px;font-size:.74rem}
+.hobby-photo .photo-open{bottom:8px;right:12px;font-size:.8rem}
+.hobby-card:first-child{grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);gap:55px;padding:45px 35px;margin-bottom:12px;background:#e5e8ec;border:1px solid var(--line)}
+.hobby-card:first-child h3{font-size:2rem;letter-spacing:-.05em}
+.hobby-card:first-child .hobby-tag{display:inline-block;border:1px solid #aab2bb;padding:5px 10px;margin-bottom:20px;font-size:.8rem}
+.hobby-card:first-child .hobby-copy>p:last-child{font-size:1rem;line-height:1.95}
+.hobby-card:first-child .hobby-visual{aspect-ratio:4/3}
+.hobby-photo{background:#e9ecef}
+@media(max-width:680px){.preview-banner{font-size:10px}.hobby-card:first-child{grid-template-columns:1fr;gap:25px;padding:26px 22px}.hobby-card:first-child>.hobby-copy{grid-column:1;grid-row:1}.hobby-card:first-child>.hobby-photo{grid-column:1;grid-row:2;width:220px;max-width:100%}.hobby-card:first-child h3{font-size:1.7rem}.hobby-card{grid-template-columns:minmax(0,1fr) 110px;gap:18px}.hobby-card .hobby-visual{aspect-ratio:1}.hobby-copy h3{font-size:1.2rem}.hobby-copy>p:last-child{font-size:.85rem}.hobby-photo-label{font-size:.65rem;padding:7px}.hobby-photo .photo-open{right:7px;bottom:7px}}
+
+/* Make section labels easier to recognize. */
+.small-title { font-size: 1.2rem; letter-spacing: .025em; margin-bottom: 22px; }
+@media (max-width: 680px) { .small-title { font-size: 1.1rem; } }
