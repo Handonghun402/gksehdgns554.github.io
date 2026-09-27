@@ -79,6 +79,10 @@ window.HOBBY_PHOTOS = {
     {
       "caption": "",
       "src": "photos/fishing-01.png"
+    },
+    {
+      "src": "photos/fishing-02.jpg",
+      "caption": ""
     }
   ],
   "travel": [
