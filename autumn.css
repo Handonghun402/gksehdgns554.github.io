@@ -15,8 +15,9 @@ body{isolation:isolate}
 .autumn-toggle{position:fixed;right:16px;bottom:16px;z-index:3;border:1px solid #ccd0d5;border-radius:20px;background:#f1f2f3e8;color:#606873;font:12px "Malgun Gothic",sans-serif;padding:9px 13px;cursor:pointer;box-shadow:0 2px 8px #00000008}
 .autumn-toggle:focus-visible{outline:2px solid #727c89;outline-offset:3px}
 @media(max-width:1180px){.autumn-tree{opacity:.12}}
-@media(max-width:680px){.autumn-edge{width:12px;opacity:.4}.autumn-tree{display:none}.autumn-leaf:nth-of-type(n+2){display:none}.autumn-leaf{--size:12px!important;--left:0%!important;--fall:40s!important;--drift:2px!important}.autumn-toggle{font-size:10px;right:10px;bottom:10px;padding:6px 10px;box-shadow:none}}
+@media(max-width:680px){.autumn-edge{width:18px;opacity:.7}.autumn-tree{display:block;left:-12px;opacity:.085;mask-image:linear-gradient(to right,#000 15%,transparent 80%);-webkit-mask-image:linear-gradient(to right,#000 15%,transparent 80%)}.autumn-tree--right{left:auto;right:-12px}.autumn-leaf:nth-of-type(n+3){display:none}.autumn-leaf{--size:15px!important;--left:0%!important;--fall:36s!important;--drift:4px!important}.autumn-leaf:nth-of-type(2){--left:40%!important;--delay:-18s!important}.autumn-toggle{font-size:10px;right:10px;bottom:10px;padding:6px 10px;box-shadow:none}}
 @media(prefers-reduced-motion:reduce){.autumn-leaf,.autumn-toggle{display:none}}
+
 
 
 
