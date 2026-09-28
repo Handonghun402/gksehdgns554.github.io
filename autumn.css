@@ -1,12 +1,12 @@
-/* Decoration is clipped to the outer gutters, below every content section. */
+/* Trees keep their own canvas; only falling leaves are clipped to the gutters. */
 body{isolation:isolate}
 .autumn-leaves{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;contain:strict}
 .site-header,main,footer,.preview-banner{position:relative;z-index:1}
 .autumn-edge{position:absolute;top:0;bottom:0;width:max(22px,calc((100vw - 1112px)/2 - 12px));overflow:hidden}
 .autumn-edge--left{left:0}
 .autumn-edge--right{right:0}
-.autumn-tree{position:absolute;top:0;left:0;width:max(160px,20svh);height:max(800px,100svh);opacity:.27}
-.autumn-edge--right .autumn-tree{left:auto;right:0;transform:scaleX(-1)}
+.autumn-tree{position:absolute;top:0;left:0;width:160px;height:800px;max-width:none;max-height:none;opacity:.27;pointer-events:none;mask-image:linear-gradient(to right,#000 30%,transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 30%,transparent 100%)}
+.autumn-tree--right{left:auto;right:0;transform:scaleX(-1)}
 .autumn-leaf{position:absolute;top:-60px;left:var(--left);width:var(--size);height:calc(var(--size)*1.07);color:var(--color);opacity:0;animation:autumn-fall var(--fall) linear var(--delay) infinite;will-change:transform}
 .autumn-leaf svg{width:100%;height:100%;animation:autumn-sway var(--sway) ease-in-out var(--delay) infinite alternate}
 @keyframes autumn-fall{0%{transform:translate3d(0,-20px,0);opacity:0}8%{opacity:.45}85%{opacity:.45}100%{transform:translate3d(var(--drift),calc(100vh + 100px),0);opacity:0}}
@@ -14,6 +14,8 @@ body{isolation:isolate}
 .autumn-leaves.paused .autumn-leaf,.autumn-leaves.paused .autumn-leaf svg,.autumn-leaves.tab-hidden .autumn-leaf,.autumn-leaves.tab-hidden .autumn-leaf svg{animation-play-state:paused}
 .autumn-toggle{position:fixed;right:16px;bottom:16px;z-index:3;border:1px solid #ccd0d5;border-radius:20px;background:#f1f2f3e8;color:#606873;font:12px "Malgun Gothic",sans-serif;padding:9px 13px;cursor:pointer;box-shadow:0 2px 8px #00000008}
 .autumn-toggle:focus-visible{outline:2px solid #727c89;outline-offset:3px}
-@media(max-width:680px){.autumn-edge{width:16px}.autumn-tree{opacity:.18}.autumn-leaf:nth-of-type(n+4){display:none}.autumn-leaf{--size:16px!important}.autumn-toggle{font-size:11px;right:10px;bottom:10px}}
+@media(max-width:1180px){.autumn-tree{opacity:.12}}
+@media(max-width:680px){.autumn-edge{width:16px}.autumn-tree{opacity:.10}.autumn-leaf:nth-of-type(n+4){display:none}.autumn-leaf{--size:16px!important}.autumn-toggle{font-size:11px;right:10px;bottom:10px}}
 @media(prefers-reduced-motion:reduce){.autumn-leaf,.autumn-toggle{display:none}}
+
 
