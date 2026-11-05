@@ -3,6 +3,7 @@
   layer.className = 'autumn-leaves';
   layer.setAttribute('aria-hidden', 'true');
   const colors = ['#a96340', '#b58242', '#a54e3e', '#bd9855'];
+  const fallingColors = ['#c92b32', '#b51f35', '#db3c34', '#a91e2c'];
   const maple = 'M30 2 36 17 43 12 42 25 56 20 52 30 60 34 41 43 44 50 32 47 32 60 28 60 29 47 16 50 19 43 0 34 8 30 4 20 18 25 17 12 24 17Z';
   const leafSvg = `<svg viewBox="0 0 60 64" focusable="false"><path d="${maple}" fill="currentColor"/><path d="M30 12v44M30 37 15 29m15 8 15-8M30 29l-7-9m7 9 7-9" fill="none" stroke="#f4e5d3" stroke-width="1" opacity=".6"/></svg>`;
   ['left', 'right'].forEach((side, sideIndex) => {
@@ -20,7 +21,7 @@
       const i = n + sideIndex * 4;
       const leaf = document.createElement('span');
       leaf.className = 'autumn-leaf';
-      leaf.style.cssText = `--left:${left}%;--fall:${26 + i % 4 * 4}s;--delay:${-i * 5.7}s;--size:${18 + i % 3 * 5}px;--drift:${i % 2 ? -12 : 12}px;--color:${colors[i % colors.length]};--sway:${5 + i % 3}s;`;
+      leaf.style.cssText = `--left:${left}%;--fall:${26 + i % 4 * 4}s;--delay:${-i * 5.7}s;--size:${18 + i % 3 * 5}px;--drift:${i % 2 ? -12 : 12}px;--color:${fallingColors[i % fallingColors.length]};--sway:${5 + i % 3}s;`;
       leaf.innerHTML = leafSvg;
       edge.append(leaf);
     });
