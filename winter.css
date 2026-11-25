@@ -1,0 +1,54 @@
+/* A quiet early-winter scene, always underneath the page content. */
+body { isolation: isolate; }
+.winter-background {
+  position: fixed; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none; contain: strict;
+}
+.site-header, main, footer, .preview-banner { position: relative; z-index: 1; }
+.winter-tree {
+  position: absolute; top: 0; left: 0;
+  width: 160px; height: 800px; max-width: none; max-height: none;
+  opacity: .48; pointer-events: none;
+  mask-image: linear-gradient(to right, #000 22%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 22%, transparent 100%);
+}
+.winter-tree--right { left: auto; right: 0; transform: scaleX(-1); }
+.winter-flake {
+  position: absolute; top: -16px; left: var(--left);
+  width: var(--size); height: var(--size); border-radius: 50%;
+  background: #fff; box-shadow: 0 0 2px #8ca3b65c;
+  opacity: 0; will-change: transform;
+  animation: winter-snowfall var(--fall) linear var(--delay) infinite;
+}
+@keyframes winter-snowfall {
+  0% { transform: translate3d(0, -12px, 0); opacity: 0; }
+  10% { opacity: .7; }
+  45% { transform: translate3d(var(--drift), 45vh, 0); }
+  85% { opacity: .7; }
+  100% { transform: translate3d(0, calc(100vh + 40px), 0); opacity: 0; }
+}
+.winter-background.paused .winter-flake,
+.winter-background.tab-hidden .winter-flake { animation-play-state: paused; }
+.winter-toggle {
+  position: fixed; right: 16px; bottom: 16px; z-index: 3;
+  border: 1px solid #ccd3d9; border-radius: 20px;
+  background: #f1f2f3e8; color: #606d77;
+  font: 12px "Malgun Gothic", sans-serif;
+  padding: 9px 13px; cursor: pointer;
+}
+.winter-toggle:focus-visible { outline: 2px solid #727f8c; outline-offset: 3px; }
+@media (max-width: 1180px) { .winter-tree { opacity: .25; } }
+@media (max-width: 680px) {
+  .winter-tree {
+    left: -12px; opacity: .20;
+    mask-image: linear-gradient(to right, #000 12%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to right, #000 12%, transparent 80%);
+  }
+  .winter-tree--right { left: auto; right: -12px; }
+  .winter-flake:nth-of-type(n+9) { display: none; }
+  .winter-flake { width: 2.5px; height: 2.5px; }
+  .winter-toggle { font-size: 10px; right: 10px; bottom: 10px; padding: 6px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .winter-flake, .winter-toggle { display: none; }
+}
